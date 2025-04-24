@@ -15,7 +15,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-muted/30 w-full">
+    <section id="about" className="py-16 md:py-20 w-full">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold mb-2 text-center">About Me</h2>

@@ -41,7 +41,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 w-full">
+    <section id="contact" className="py-16 md:py-20 w-full">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold mb-2 text-center">Get In Touch</h2>

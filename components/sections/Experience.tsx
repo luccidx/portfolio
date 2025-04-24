@@ -72,10 +72,7 @@ export default function Experience() {
   });
 
   return (
-    <section
-      id="experience"
-      className="py-16 md:py-24 overflow-hidden bg-muted/30 w-full"
-    >
+    <section id="experience" className="py-16 md:py-20 overflow-hidden w-full">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold mb-2 text-center">

@@ -64,7 +64,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-24 w-full">
+    <section id="projects" className="py-16 md:py-20 w-full">
       <div className="container max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
           title="Projects"
