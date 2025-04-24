@@ -28,16 +28,22 @@ export function ThemeProvider({
   storageKey = "ui-theme",
   ...props
 }: ThemeProviderProps) {
+  // Initialize with defaultTheme to avoid localStorage during SSR
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-  // Initialize theme from localStorage only on client-side after mount
+  // Load theme from localStorage only after mounting (client-side)
   useEffect(() => {
-    const storedTheme = localStorage.getItem(storageKey) as Theme;
-    if (storedTheme) {
-      setTheme(storedTheme);
+    try {
+      const savedTheme = localStorage.getItem(storageKey) as Theme;
+      if (savedTheme) {
+        setTheme(savedTheme);
+      }
+    } catch (error) {
+      console.error("Error accessing localStorage:", error);
     }
   }, [storageKey]);
 
+  // Apply theme to document
   useEffect(() => {
     const root = window.document.documentElement;
 
@@ -56,11 +62,16 @@ export function ThemeProvider({
     root.classList.add(theme);
   }, [theme]);
 
+  // Memoize the context value to prevent unnecessary renders
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
+    setTheme: (newTheme: Theme) => {
+      try {
+        localStorage.setItem(storageKey, newTheme);
+      } catch (error) {
+        console.error("Error setting localStorage:", error);
+      }
+      setTheme(newTheme);
     },
   };
 

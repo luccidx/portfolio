@@ -15,7 +15,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-muted/30">
+    <section id="about" className="py-16 md:py-24 bg-muted/30 w-full">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold mb-2 text-center">About Me</h2>
@@ -24,21 +24,23 @@ export default function About() {
           </p>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <FadeIn direction="right">
-            <div className="relative rounded-xl overflow-hidden aspect-square max-w-md mx-auto md:mx-0">
+            <div className="relative rounded-xl overflow-hidden aspect-square w-full max-w-md mx-auto md:mx-0 bg-muted">
               <Image
-                src="/placeholder-profile.jpg"
+                src="/images/profile.jpg"
                 alt="Profile Picture"
                 fill
                 className="object-cover"
+                unoptimized
+                sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
           </FadeIn>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <FadeIn direction="left" delay={0.2}>
-              <h3 className="text-2xl font-semibold mb-2">Who am I?</h3>
+              <h3 className="text-2xl font-semibold mb-3">Who am I?</h3>
               <p className="text-muted-foreground mb-4">
                 I'm a passionate full-stack developer with a strong focus on
                 creating beautiful, responsive, and user-friendly web
@@ -56,9 +58,9 @@ export default function About() {
             </FadeIn>
 
             <FadeIn direction="left" delay={0.4}>
-              <h3 className="text-2xl font-semibold mb-4">My Skills</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {skills.map((skill, index) => (
+              <h3 className="text-2xl font-semibold mb-5">My Skills</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {skills.map((skill) => (
                   <Card key={skill.name} className="overflow-hidden">
                     <CardContent className="p-4">
                       <div className="flex justify-between items-center mb-2">

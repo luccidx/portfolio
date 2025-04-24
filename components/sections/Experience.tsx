@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import FadeIn from "@/components/animation/FadeIn";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 
@@ -74,7 +74,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-16 md:py-24 overflow-hidden bg-muted/30"
+      className="py-16 md:py-24 overflow-hidden bg-muted/30 w-full"
     >
       <div className="container">
         <FadeIn>
@@ -86,7 +86,7 @@ export default function Experience() {
           </p>
         </FadeIn>
 
-        <div ref={containerRef} className="relative">
+        <div ref={containerRef} className="relative max-w-5xl mx-auto">
           {/* Timeline line */}
           <motion.div
             className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border"
@@ -97,7 +97,7 @@ export default function Experience() {
           />
 
           {/* Timeline Cards */}
-          <div className="space-y-12 relative">
+          <div className="space-y-12 md:space-y-16 relative">
             {workExperience.map((item, index) => (
               <TimelineItem key={item.id} item={item} index={index} />
             ))}
@@ -141,7 +141,7 @@ function TimelineItem({ item, index }: TimelineItemProps) {
 
       {/* Timeline content */}
       <div
-        className={`md:w-5/12 mt-4 md:mt-0 ${
+        className={`md:w-5/12 w-full mt-4 md:mt-0 ${
           isEven ? "md:mr-auto" : "md:ml-auto"
         }`}
       >
@@ -150,7 +150,7 @@ function TimelineItem({ item, index }: TimelineItemProps) {
             <CardTitle>
               {item.type === "work" ? item.position : item.degree}
             </CardTitle>
-            <CardDescription className="flex items-center">
+            <CardDescription className="flex items-center flex-wrap gap-1">
               <span className="font-medium">{item.company}</span>
               <span className="mx-2">•</span>
               <span className="flex items-center text-sm">
