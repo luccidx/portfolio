@@ -44,18 +44,18 @@ export default function About() {
             <FadeIn direction="left" delay={0.2}>
               <h3 className="text-2xl font-semibold mb-3">Who am I?</h3>
               <p className="text-muted-foreground mb-4">
-                I'm a passionate full-stack AI developer with a strong focus on
-                creating beautiful, responsive, and user-friendly web
+                I&apos;m a passionate full-stack AI developer with a strong
+                focus on creating beautiful, responsive, and user-friendly web
                 applications. With over 5 years of experience in web
-                development, I've worked on a variety of projects from small
-                business websites to complex enterprise applications.
+                development, I&apos;ve worked on a variety of projects from
+                small business websites to complex enterprise applications.
               </p>
               <p className="text-muted-foreground">
                 My approach combines technical expertise with creative
                 problem-solving to deliver solutions that not only meet the
-                requirements but exceed expectations. I'm constantly learning
-                and adapting to new technologies to stay at the forefront of web
-                development.
+                requirements but exceed expectations. I&apos;m constantly
+                learning and adapting to new technologies to stay at the
+                forefront of web development.
               </p>
             </FadeIn>
 

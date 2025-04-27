@@ -46,8 +46,8 @@ export default function Contact() {
         <FadeIn>
           <h2 className="text-3xl font-bold mb-2 text-center">Get In Touch</h2>
           <p className="text-muted-foreground text-center mb-12 max-w-md mx-auto">
-            Have a project in mind or want to discuss an opportunity? I'd love
-            to hear from you.
+            Have a project in mind or want to discuss an opportunity? I&apos;d
+            love to hear from you.
           </p>
         </FadeIn>
 
@@ -156,7 +156,8 @@ export default function Contact() {
 
                   {isSubmitted && (
                     <div className="mt-4 p-3 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-md text-sm text-center">
-                      Thank you for your message! I'll get back to you soon.
+                      Thank you for your message! I&apos;ll get back to you
+                      soon.
                     </div>
                   )}
                 </form>
@@ -172,7 +173,7 @@ export default function Contact() {
               </h3>
               <p className="text-muted-foreground mb-8">
                 Feel free to reach out to me through any of the following
-                methods. I'm always open to discussing new projects,
+                methods. I&apos;m always open to discussing new projects,
                 opportunities, and ideas.
               </p>
 

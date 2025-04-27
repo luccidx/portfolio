@@ -26,7 +26,7 @@ export default function TextReveal({
   // Variants for the container
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: (i = 1) => ({
+    visible: () => ({
       opacity: 1,
       transition: { staggerChildren: 0.12, delayChildren: delay },
     }),

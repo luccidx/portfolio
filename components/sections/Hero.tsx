@@ -50,7 +50,7 @@ export default function Hero() {
               <p>
                 I specialize in creating elegant, high-performance web
                 applications using cutting-edge technologies and best practices.
-                Let's bring your ideas to life.
+                Let&apos;s bring your ideas to life.
               </p>
             </FadeIn>
 
