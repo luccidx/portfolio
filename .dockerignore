@@ -1,0 +1,20 @@
+# Exclude node_modules and .next folders
+node_modules
+.next
+.git
+
+# Exclude development files
+*.md
+*.log
+.env*
+.vscode
+.idea
+.DS_Store
+
+# Include specific env file if needed
+!.env.production
+
+# Exclude test files
+__tests__
+*.test.*
+*.spec.* 
