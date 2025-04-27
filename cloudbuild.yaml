@@ -13,7 +13,7 @@ steps:
     args:
       - "run"
       - "deploy"
-      - "gsantoshkumar-in" # Use the exact service name that appears in your logs
+      - "portfolio-app"
       - "--image"
       - "gcr.io/$PROJECT_ID/portfolio-app:$COMMIT_SHA"
       - "--region"
@@ -30,15 +30,9 @@ steps:
       - "--cpu"
       - "1"
       - "--memory"
-      - "1Gi"
+      - "512Mi"
       - "--timeout"
       - "300s"
-      - "--session-affinity"
-      - "--startup-cpu-boost"
-      - "--cpu-throttling"
-      - "--set-env-vars=NODE_ENV=production,HOST=0.0.0.0,HOSTNAME=0.0.0.0"
-      - "--container-command=npm"
-      - "--container-arg=start"
 
 images:
   - "gcr.io/$PROJECT_ID/portfolio-app:$COMMIT_SHA"
