@@ -1,12 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  output: "standalone",
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   eslint: {
-    // This will disable the unescaped-entities rule completely
     ignoreDuringBuilds: true,
   },
+  images: {
+    unoptimized: true,
+  },
+  basePath: "",
 };
 
 export default nextConfig;
