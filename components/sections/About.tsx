@@ -28,12 +28,14 @@ export default function About() {
           <FadeIn direction="right">
             <div className="relative rounded-xl overflow-hidden aspect-square w-full max-w-md mx-auto md:mx-0 bg-muted">
               <Image
-                src="/images/profile.jpg"
+                src="/santu_new_image.jpg" // Image is in the public directory
                 alt="Profile Picture"
                 fill
                 className="object-cover"
                 unoptimized
                 sizes="(max-width: 768px) 100vw, 400px"
+                priority // Added priority for better loading performance
+                loading="eager" // Ensures the image loads eagerly
               />
             </div>
           </FadeIn>
@@ -42,7 +44,7 @@ export default function About() {
             <FadeIn direction="left" delay={0.2}>
               <h3 className="text-2xl font-semibold mb-3">Who am I?</h3>
               <p className="text-muted-foreground mb-4">
-                I'm a passionate full-stack developer with a strong focus on
+                I'm a passionate full-stack AI developer with a strong focus on
                 creating beautiful, responsive, and user-friendly web
                 applications. With over 5 years of experience in web
                 development, I've worked on a variety of projects from small

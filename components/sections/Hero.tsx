@@ -32,12 +32,12 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Full-Stack Developer
+                Full-Stack AI Developer
               </motion.span>
             </FadeIn>
 
             <TextReveal
-              text="Building beautiful digital experiences with modern technologies"
+              text="Building scalable AI solutions with modern technologies"
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8"
               delay={0.5}
             />

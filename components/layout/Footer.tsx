@@ -13,11 +13,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
             <Link href="#home" className="text-2xl font-bold">
-              <span className="text-primary">Portfolio</span>
+              <span className="text-primary">G Santosh Kumar</span>
             </Link>
             <p className="mt-2 text-muted-foreground max-w-md">
-              Crafting elegant digital experiences and solutions through
-              creative code and innovative design.
+              Building scalable AI solutions with modern technologies
             </p>
           </div>
 
@@ -50,7 +49,10 @@ export default function Footer() {
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:hello@example.com" aria-label="Email">
+              <Link
+                href="mailto:girisantoshkumar1999@gmail.com"
+                aria-label="Email"
+              >
                 <Mail className="h-5 w-5" />
               </Link>
             </Button>
@@ -59,7 +61,7 @@ export default function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Portfolio. All rights reserved.
+            © {currentYear} G Santosh Kumar. All rights reserved.
           </p>
 
           <div className="flex gap-6">

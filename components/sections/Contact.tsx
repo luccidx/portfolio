@@ -182,10 +182,10 @@ export default function Contact() {
                   <div>
                     <h4 className="text-sm font-medium">Email</h4>
                     <a
-                      href="mailto:hello@example.com"
+                      href="mailto:girisantoshkumar1999@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      hello@example.com
+                      girisantoshkumar1999@gmail.com
                     </a>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function Contact() {
                       href="tel:+11234567890"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +1 (123) 456-7890
+                      +91 97380 37623
                     </a>
                   </div>
                 </div>
@@ -208,14 +208,14 @@ export default function Contact() {
                   <div>
                     <h4 className="text-sm font-medium">Location</h4>
                     <p className="text-muted-foreground">
-                      San Francisco, California
+                      Bengaluru, Karnataka, India.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="text-xl font-semibold mb-4">Office Hours</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex justify-between">
@@ -231,7 +231,7 @@ export default function Contact() {
                   <span>Closed</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </FadeIn>
         </div>
       </div>
