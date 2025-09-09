@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="flex gap-4">
             <Button variant="ghost" size="icon" asChild>
               <Link
-                href="https://github.com"
+                href="https://github.com/santosh-kumar-g-cloudambassadors"
                 target="_blank"
                 aria-label="GitHub"
               >
@@ -32,7 +32,7 @@ export default function Footer() {
             </Button>
             <Button variant="ghost" size="icon" asChild>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/g-santosh-kumar/"
                 target="_blank"
                 aria-label="LinkedIn"
               >
@@ -41,11 +41,20 @@ export default function Footer() {
             </Button>
             <Button variant="ghost" size="icon" asChild>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/g_santoshkumar1"
                 target="_blank"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
+                
+                </Link>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <Link
+                href="https://www.instagram.com/luccidx/"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" /> 
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
@@ -59,25 +68,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="border-t border-border pt-8 flex justify-center items-center gap-4">
+          <p className="text-sm text-muted-foreground text-center">
             © {currentYear} G Santosh Kumar. All rights reserved.
           </p>
-
-          <div className="flex gap-6">
-            <Link
-              href="#"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="#"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
