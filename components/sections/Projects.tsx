@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import FadeIn from "@/components/animation/FadeIn";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ElectricBorder from "@/components/ui/ElectricBorder";
 
 // Define project type
 interface Project {
@@ -13,39 +14,138 @@ interface Project {
   description: string;
   image?: string;
   tags: string[];
-  category: string;
+  category: string[];
   link?: string;
 }
 
 // Sample projects (this should be imported from @/constants in a real project)
 const PROJECTS: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "Podcraftor",
     description:
-      "A full-featured e-commerce platform built with Next.js, React, and Stripe for payment processing.",
-    image: "/images/project-1.jpg",
-    tags: ["Next.js", "React", "Stripe", "Tailwind CSS"],
-    category: "web",
-    link: "https://example.com",
+      "Podcraftor is an advanced full-stack platform that automates the entire podcast creation workflow from a simple text prompt. Leveraging Google Text-to-Speech (TTS) with SSML (Speech Synthesis Markup Language) support, Podcraftor generates highly natural, expressive, and human-like audio, allowing for nuanced control over voice, tone, and pacing.",
+    image: "/Podcraftor_ai_image.jpeg",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Python",
+      "Fast API",
+      "Firebase",
+      "Google Cloud Storage",
+      "GCP",
+      "Google SSO",
+      "Google TTS",
+      "SSML",
+      "Gemini LLM",
+      "GenAI SDK",
+      "ElevenLabs"
+    ],
+    category: ["ai", "fullstack","media"],
+    link: "https://boxsand.ai/podcast/podcraftor",
   },
   {
-    title: "Task Management App",
+    title: "Audiobook",
     description:
-      "A real-time task management application with collaborative features and customizable workflows.",
-    image: "/images/project-2.jpg",
-    tags: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
-    category: "web",
-    link: "https://example.com",
+      "An intelligent full-stack solution that processes PDFs and ePUB formats to autonomously structure chapters and generate high-quality audiobooks using Google TTS — surpassing traditional audiobook features offered by platforms like ElevenLabs.",
+    image: "/Audiobook_image.jpeg",
+    tags: [
+      "React", 
+      "Next.js", 
+      "Tailwind CSS", 
+      "TypeScript",
+      "Python",
+      "Fast API",
+      "GCP",
+      "Google TTS",
+      "Gemini LLM",
+      "GenAI SDK",
+      "WaveSurfer",
+      "PDF",
+      "ePUB",
+      "Firebase",
+      "Google Cloud Storage",
+      "Google SSO"
+    ],
+    category: ["ai", "fullstack","media"],
+    link: "https://frontend-audiobook-244342848333.us-central1.run.app/",
   },
   {
-    title: "AI Image Generator",
+    title: "Live Audio bot",
     description:
-      "An AI-powered image generation tool that creates unique artwork based on text prompts.",
-    image: "/images/project-3.jpg",
-    tags: ["Python", "TensorFlow", "React", "Flask"],
-    category: "ai",
-    link: "https://example.com",
+      "A cutting-edge real-time conversational AI agent powered by the Gemini live-voice model, designed to engage in natural, dynamic voice interactions with users. This intelligent agent supports advanced function calling and tool invocation, enabling it to perform complex tasks and take actions on behalf of the user during live conversations. Developed as a proof-of-concept for Flipkart Mitra and Gide.ai.",
+    image: "/Audiobot_image.jpeg",
+    tags: [
+      "React", 
+      "Tailwind CSS", 
+      "TypeScript", 
+      "Gemini live LLM", 
+      "GenAI SDK",
+      "Google Cloud Run",
+      "Google Cloud Storage",
+      "PostgreSQL"],
+    category: ["ai", "fullstack","bot"],
+    link: "https://flipkart-mitra-973165020902.us-central1.run.app/",
   },
+  {
+    title: "Medical Docs Analyzer",
+    description: "A smart healthcare document analysis system capable of interpreting diverse medical documents including handwritten prescriptions and discharge summaries. It extracts key KPIs, detects fraud, verifies document legitimacy, and generates contextual follow-up questions — significantly optimizing insurance claim verifications.",
+    image: "/Medical_doc_analyzer.png",
+    tags: [
+      "React", 
+      "Tailwind CSS", 
+      "TypeScript", 
+      "Python", 
+      "Fast API", 
+      "Gemini LLM", 
+      "GenAI SDK",
+      "Google Cloud Storage", 
+      "Cloud Run", 
+      "PostgreSQL"],
+    category: ["ai", "fullstack","medical"],
+    link: "https://boxsand.ai/medicalanalyzer",
+  },
+  {
+    title: "Social Media Influenzer Analyser ",
+    description: "A comprehensive social media analytics tool that scrapes user comments from platforms like Instagram, YouTube, and Facebook to analyze sentiment trends. It offers an interactive dashboard with actionable KPIs to track influencer campaign effectiveness and audience perception.",
+    image: "/SocialMediaInfluenzerAnalyzer.png",
+    tags: [
+      "React", 
+      "Tailwind CSS", 
+      "TypeScript", 
+      "Python", 
+      "Fast API",
+      "Selenium",
+      "Selenium WebDriver",
+      "BeautifulSoup",
+      "bs4",
+      "Gemini LLM", 
+      "GenAI SDK",
+      "Google Cloud Storage", 
+      "Cloud Run"],
+    category: ["ai", "fullstack","media"],
+    link: "https://boxsand.ai/sentiment/analysis",
+  },
+  {
+    title: "Podcast AI Idea Generator",
+    description: "The Podcast Idea Generator is a sophisticated API-driven application designed to bridge the gap between raw trend data and actionable podcast content. It intelligently combines insights from global Google Trends (accessed via BigQuery) and Podeo's rich internal podcast analytics (stored in Elasticsearch).",
+    image: "/PodcastIdeaGenerator.png",
+    tags: [
+      "React", 
+      "Tailwind CSS", 
+      "TypeScript", 
+      "Python", 
+      "Fast API",
+      "BigQuery",
+      "Elasticsearch",
+      "Google Cloud Storage", 
+      "Cloud Run",
+      "Google Trends API"
+    ],
+    category: ["ai", "fullstack","media"],
+    link: "https://boxsand.ai/podcast/ideas",
+  }
 ];
 
 export default function Projects() {
@@ -55,12 +155,12 @@ export default function Projects() {
   const filteredProjects =
     filter === "all"
       ? PROJECTS
-      : PROJECTS.filter((project) => project.category === filter);
+      : PROJECTS.filter((project) => project.category.includes(filter));
 
   // Get unique categories
   const categories = [
     "all",
-    ...Array.from(new Set(PROJECTS.map((project) => project.category))),
+    ...Array.from(new Set(PROJECTS.flatMap((project) => project.category))),
   ];
 
   return (
@@ -89,7 +189,15 @@ export default function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <FadeIn key={index} direction="up" delay={index * 0.1}>
-              <div className="group h-full bg-card border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col">
+              <ElectricBorder
+                color={project.category.includes('ai') ? '#7df9ff' : '#6366f1'}
+                speed={1.2}
+                chaos={0.6}
+                thickness={2}
+                style={{ borderRadius: 12 }}
+                className="group h-full"
+              >
+                <div className="bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full">
                 <div className="relative h-48 sm:h-60 overflow-hidden">
                   {project.image ? (
                     <Image
@@ -127,9 +235,16 @@ export default function Projects() {
                       ))}
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-xs text-muted-foreground capitalize">
-                        {project.category}
-                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {project.category.map((cat, idx) => (
+                          <span
+                            key={idx}
+                            className="text-xs text-muted-foreground capitalize bg-muted px-2 py-1 rounded"
+                          >
+                            {cat}
+                          </span>
+                        ))}
+                      </div>
                       {project.link && (
                         <Button
                           variant="ghost"
@@ -149,7 +264,8 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              </div>
+                </div>
+              </ElectricBorder>
             </FadeIn>
           ))}
         </div>
