@@ -11,7 +11,7 @@ const ANIMATION_CONFIG = {
 
 const toCssLength = (value: number | string | undefined) => (typeof value === 'number' ? `${value}px` : (value ?? undefined));
 
-const useResizeObserver = (callback: () => void, elements: React.RefObject<HTMLElement>[], dependencies: any[]) => {
+const useResizeObserver = (callback: () => void, elements: React.RefObject<HTMLElement | null>[], dependencies: any[]) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
       const handleResize = () => callback();
@@ -36,7 +36,7 @@ const useResizeObserver = (callback: () => void, elements: React.RefObject<HTMLE
   }, dependencies);
 };
 
-const useImageLoader = (seqRef: React.RefObject<HTMLElement>, onLoad: () => void, dependencies: any[]) => {
+const useImageLoader = (seqRef: React.RefObject<HTMLElement | null>, onLoad: () => void, dependencies: any[]) => {
   useEffect(() => {
     const images = seqRef.current?.querySelectorAll('img') ?? [];
 
@@ -73,7 +73,7 @@ const useImageLoader = (seqRef: React.RefObject<HTMLElement>, onLoad: () => void
   }, dependencies);
 };
 
-const useAnimationLoop = (trackRef: React.RefObject<HTMLElement>, targetVelocity: number, seqWidth: number, isHovered: boolean, pauseOnHover: boolean) => {
+const useAnimationLoop = (trackRef: React.RefObject<HTMLElement | null>, targetVelocity: number, seqWidth: number, isHovered: boolean, pauseOnHover: boolean) => {
   const rafRef = useRef<number | null>(null);
   const lastTimestampRef = useRef<number | null>(null);
   const offsetRef = useRef(0);
