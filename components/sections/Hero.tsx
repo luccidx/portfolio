@@ -6,6 +6,7 @@ import { ArrowRight, Download } from "lucide-react";
 import FadeIn from "@/components/animation/FadeIn";
 import TextReveal from "@/components/animation/TextReveal";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -13,9 +14,9 @@ export default function Hero() {
       id="home"
       className="relative pt-32 pb-16 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32 overflow-hidden flex items-center justify-center w-full"
     >
-      <div className="container">
+      <div className="container max-w-7xl">
         <motion.div
-          className="max-w-4xl mx-auto bg-background/70 dark:bg-background/60 backdrop-blur-xl rounded-3xl shadow-lg border border-border/40 p-6 sm:p-8 md:p-12"
+          className="max-w-6xl mx-auto bg-background/70 dark:bg-background/60 backdrop-blur-xl rounded-3xl shadow-lg border border-border/40 p-6 sm:p-8 md:p-12"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -25,19 +26,36 @@ export default function Hero() {
             delay: 0.2,
           }}
         >
-          <div className="text-center">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            {/* Profile Picture */}
+            <FadeIn direction="right" delay={0.3}>
+              <div className="relative rounded-full overflow-hidden w-48 h-48 lg:w-56 lg:h-56 bg-muted flex-shrink-0">
+                <Image
+                  src="/santu_new_image.jpg" 
+                  alt="Profile Picture"
+                  fill
+                  className="object-cover"
+                  unoptimized
+                  sizes="(max-width: 1024px) 192px, 224px"
+                  priority
+                  loading="eager"
+                />
+              </div>
+            </FadeIn>
+
+            <div className="text-center lg:text-center flex-1">
             <FadeIn delay={0.4}>
               <motion.span
                 className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Full-Stack AI Developer
+                Full-Stack AI & ML Architect
               </motion.span>
             </FadeIn>
 
             <TextReveal
-              text="Building scalable AI solutions with modern technologies"
+              text="Empowering Innovation: Crafting Next-Gen AI & ML Solutions"
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8"
               delay={0.5}
             />
@@ -48,9 +66,7 @@ export default function Hero() {
               className="mb-8 md:mb-10 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
             >
               <p>
-                I specialize in creating elegant, high-performance web
-                applications using cutting-edge technologies and best practices.
-                Let&apos;s bring your ideas to life.
+                As an AI & ML Architect, I design and build scalable, high-performance AI applications and robust MLOps pipelines. My expertise spans end-to-end machine learning solutions, from model development to deploying production-grade systems using Google Vertex AI, AutoML & Kubeflow. I am passionate about transforming complex ideas into impactful, real-world AI products.
               </p>
             </FadeIn>
 
@@ -86,6 +102,7 @@ export default function Hero() {
                   </Button>
                 </motion.div>
               </FadeIn>
+            </div>
             </div>
           </div>
         </motion.div>

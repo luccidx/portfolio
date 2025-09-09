@@ -214,25 +214,25 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* <div>
-              <h3 className="text-xl font-semibold mb-4">Office Hours</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>10:00 AM - 2:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span>Closed</span>
-                </li>
-              </ul>
-            </div> */}
+              {/* Google Maps Container */}
+              <div className="mt-6">
+                <h4 className="text-sm font-medium mb-3">Find me on the map</h4>
+                <div className="w-full h-48 rounded-lg overflow-hidden border border-border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.6600708854!2d77.350736!3d12.953847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc6e6b451026!2sBangalore%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1699123456789!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Location Map - Bengaluru, Karnataka, India"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
           </FadeIn>
         </div>
       </div>
