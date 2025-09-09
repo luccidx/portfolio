@@ -30,9 +30,11 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   // Initialize with defaultTheme to avoid localStorage during SSR
   const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [mounted, setMounted] = useState(false);
 
   // Load theme from localStorage only after mounting (client-side)
   useEffect(() => {
+    setMounted(true);
     try {
       const savedTheme = localStorage.getItem(storageKey) as Theme;
       if (savedTheme) {
@@ -45,6 +47,8 @@ export function ThemeProvider({
 
   // Apply theme to document
   useEffect(() => {
+    if (!mounted) return;
+    
     const root = window.document.documentElement;
 
     root.classList.remove("light", "dark");
@@ -60,7 +64,7 @@ export function ThemeProvider({
     }
 
     root.classList.add(theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   // Memoize the context value to prevent unnecessary renders
   const value = {
